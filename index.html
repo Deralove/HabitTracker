@@ -286,6 +286,12 @@
     </style>
 
     <script>
+
+        const user = localStorage.getItem('currentUser');
+  if (!user) {
+    // No user is logged in, go back to login page//
+    window.location.href = 'login.html';
+  }
         /*GET THE DATE*/
         var date = new Date()
         console.log(date);
@@ -444,10 +450,7 @@
             totalDays.innerHTML = daysCompleted + "/" + daysInThisMonth;
         };
 
-        // Redirect if user not logged in
-if (!localStorage.getItem("habitUser")) {
-    window.location.href = "login.html";
-}
+    
 
 
     </script>
