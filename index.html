@@ -79,6 +79,14 @@
         </div>
         <button id="resetButton">Reset my progress 💫</button>
 
+        <button id="logoutButton">
+  🍓 Log Out
+  <span class="logout-sparkle">🌸</span>
+  <span class="logout-sparkle">✨</span>
+  <span class="logout-sparkle">💖</span>
+</button>
+
+
         <!-- Kawaii Sparkle Buy Me a Coffee Button -->
 <div style="text-align: center; margin: 60px 0; position: relative;">
     <a href="https://www.buymeacoffee.com/deraa" target="_blank" style="text-decoration: none;">
@@ -107,6 +115,72 @@
     </body>
 
     <style>
+        #logoutButton {
+    background-color: #fff0f5;
+    color: #ff69b4;
+    border: 2px dashed #ffb6c1;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-family: 'Coiny', cursive;
+    font-size: 18px;
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.5);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#logoutButton:hover {
+    background-color: #ffe4ec;
+    transform: scale(1.05);
+}
+
+/* Sparkles */
+.logout-sparkle {
+  position: absolute;
+  animation: floatLogoutSparkle 2.5s infinite ease-in-out;
+  opacity: 0.8;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.logout-sparkle:nth-child(2) {
+  top: -10px;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.logout-sparkle:nth-child(3) {
+  top: -20px;
+  left: 60%;
+  animation-delay: 0.4s;
+}
+
+.logout-sparkle:nth-child(4) {
+  top: -15px;
+  left: 80%;
+  animation-delay: 0.8s;
+}
+
+@keyframes floatLogoutSparkle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) scale(1);
+    opacity: 0;
+  }
+}
+
+    
+        
         body{
             background-image:url("/maybethis.jpeg");
             background-size: 1200px;
@@ -292,6 +366,13 @@
     // No user is logged in, go back to login page//
     window.location.href = 'login.html';
   }
+        document.getElementById("logoutButton").addEventListener("click", function () {
+    sessionStorage.removeItem("loggedIn");
+    alert("You’ve been logged out! 💖");
+    window.location.href = "/login.html"; // Redirect to login page
+  });
+
+        
         /*GET THE DATE*/
         var date = new Date()
         console.log(date);
