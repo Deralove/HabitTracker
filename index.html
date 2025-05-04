@@ -355,6 +355,44 @@
   }
 }
 
+        @media (max-width: 768px) {
+    #calendarContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #calendarDiv {
+        width: 95%;
+    }
+
+    .days {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .day {
+        flex: 1 0 20%; /* show ~5 days per row */
+        max-width: 50px;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #title {
+        font-size: 24px;
+        margin-top: 40px;
+    }
+
+    #subtitle {
+        font-size: 16px;
+    }
+
+    #resetButton, #logoutButton {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+
 
 
     </style>
