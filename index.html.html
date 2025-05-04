@@ -444,5 +444,11 @@
             totalDays.innerHTML = daysCompleted + "/" + daysInThisMonth;
         };
 
+        // Redirect if user not logged in
+if (!localStorage.getItem("habitUser")) {
+    window.location.href = "login.html";
+}
+
+
     </script>
 </html>
